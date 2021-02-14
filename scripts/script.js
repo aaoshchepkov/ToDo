@@ -25,11 +25,11 @@ document.addEventListener('mousedown', function () {
   }
 });
 
-let getFormStorage = function(){
+let getStorage = function(){
   todoData = JSON.parse(localStorage.todoList);
 };
 
-let setToStorage = function(){
+let saveStorage = function(){
 localStorage.todoList = JSON.stringify(todoData);
 };
 
