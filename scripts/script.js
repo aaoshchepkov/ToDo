@@ -58,7 +58,7 @@ const render = function () {
     const todoRemove = li.querySelector('.todo-remove');
     todoRemove.addEventListener('click', function () {
     todoData.splice(todoData.indexOf(item.value), 1);
-      setToStorage();
+      saveStorage();
       render();
       
     });
@@ -66,7 +66,7 @@ const render = function () {
     const todoComplete = li.querySelector('.todo-complete');
     todoComplete.addEventListener('click', function () {
       item.completed = !item.completed;
-      setToStorage();
+      saveStorage();
       render();
      
     });
@@ -84,9 +84,9 @@ todoControl.addEventListener('submit', function (event) {
   };
 
   todoData.push(newTodo);
-  setToStorage();
+  saveStorage();
   render();
 });
 
-getFormStorage();
+getStorage();
 render();
