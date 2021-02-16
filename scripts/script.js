@@ -58,9 +58,11 @@ const render = function () {
 
     const todoRemove = li.querySelector('.todo-remove');
 
-    todoRemove.addEventListener("click", (e) => { 
+    todoRemove.addEventListener("click", function (e){ 
       const text = li.querySelector(".text-todo"); 
-      todoData = todoData.filter((e) => e.value !== text.innerHTML); 
+      todoData = todoData.filter(function(e) {
+      return e.value !== text.innerHTML;
+      }); 
       saveStorage();
       render(); 
     });
